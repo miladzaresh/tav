@@ -14,7 +14,10 @@ class University{
   List<Semester> get allSemester => _semster;
 
   void addStudent(Student student){
-    _studients.add(student);
+    int indexId=_studients.indexWhere((element) => element.id==student.id);
+    if(indexId != -1){
+      _studients.add(student);
+    }
   }
 
   void addSemester(Semester semester){
