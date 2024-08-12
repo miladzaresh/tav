@@ -15,7 +15,7 @@ class University{
 
   void addStudent(Student student){
     int indexId=_studients.indexWhere((element) => element.id==student.id);
-    if(indexId != -1){
+    if(indexId == -1){
       _studients.add(student);
     }
   }
