@@ -71,3 +71,12 @@ String getInput(String printer,){
 
   return result;
 }
+String getInputString(String printer,){
+  String? result=null;
+  do{
+    print(printer);
+    result=stdin.readLineSync();
+  }while(result==null||result.isEmpty );
+
+  return result;
+}

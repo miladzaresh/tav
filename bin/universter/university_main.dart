@@ -25,7 +25,17 @@ void main() {
       semesterUniversity.corse[2].copyAndAddStudentId(studentId: student.id),
     ],
   );
+  Student student2=Student(2, 'ahmad', LocationUniversity('shiraz','','',75));
+  Semester semesterStudent2 = Semester(
+    semesterUniversity.startDate,
+    semesterUniversity.endDate,
+    [
+      semesterUniversity.corse[0].copyAndAddStudentId(studentId: student.id),
+      semesterUniversity.corse[2].copyAndAddStudentId(studentId: student.id),
+    ],
+  );
   student.addSemester(semesterStudent);
+  student2.addSemester(semesterStudent2);
 
   University university=University(
     LocationUniversity('shiraz','','',75),
@@ -33,11 +43,14 @@ void main() {
 
   university.addSemester(semesterUniversity);
   university.addStudent(student);
+  university.addStudent(student2);
 
 
   print('students : ${university.allStudent}');
   print('students : ${university.allStudent[0].allSemester[0].corse.toString()}');
+  print('students : ${university.allStudent[1].allSemester[0].corse.toString()}');
   print('students : ${university.allStudent[0].allSemester.toString()}');
+  print('students : ${university.allStudent[1].allSemester.toString()}');
   print('semesters : ${university.allSemester}');
   print('calculator : ${university.allStudent[0].calculatorCostSemester('2/2/2')}');
 
